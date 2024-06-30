@@ -31,17 +31,58 @@ h2{
                  -20px 20px #26c6da,
                  -24px 24px #43a047;
 }
+.gamer-wrapper{
+    height: max-content;
+    width: max-content;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 5px solid rgb(0, 0, 0);
+    margin: 0 auto;
+    padding-bottom: 4vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.gamer-wrapper h2, .gamer-wrapper h3{
+    padding-bottom: 1vh;
+}
 .gamer-img{
-    max-width: 50vw;    
-    width: auto;
+    max-width: 50vw; 
     position: relative;
-    border: 10px solid transparent;
-    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-    border-image-slice: 1;
+}
+.gamer-img-wrapper{
+    background-color: transparent;
+    width: 50vw;
+    height: 21.5vw;
+    perspective: 1000px;
     display: block;
     margin: 0 auto;
 }
-
+.gamer-img-card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,.5);
+}
+.gamer-img-wrapper:hover .gamer-img-card{
+    transform: rotateY(180deg);
+}
+.gamer-img-front, .gamer-img-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.gamer-img-back{
+    transform: rotateY(180deg);
+    background-color: rgb(255, 170, 0);
+}
+.gamer-img-back p{
+    line-height: 20vw;
+    color: black;
+    font-weight: bolder;
+}
 .spacer10{
     width: 100vw;
     min-height: 10rem;
@@ -77,4 +118,8 @@ h2{
     to{
         transform: translate(calc(-50% - 0.5rem));
     }
+}
+
+.text-img{
+    max-height: 50rem;
 }
