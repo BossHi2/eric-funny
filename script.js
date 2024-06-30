@@ -10,5 +10,12 @@ function addAnimation(){
         slider.appendChild(duplicatedImg);
     })
 }
+function unblur(){
+    const imgparent = document.getElementsByClassName('text-img-wrapper')[0]
+    const img = imgparent.getElementsByTagName('img')[0]
+    img.classList.add('unblur')
+    const btnparent = document.getElementsByClassName('spoiler-wrapper')[0];
+    btnparent.style.zIndex = -1
+}
 
 addAnimation()
